@@ -82,7 +82,7 @@ select * from price
 --  e. What are the passenger name(s) and the ticket price for those who traveled 1000 KMs Sitting in a bus?
         
 	SELECT * FROM passenger;
-    SELECT * FROM price;
+    	SELECT * FROM price;
         
 	select a.passenger_name,b.price, b.Distance, b.bus_type FROM passenger a 
 	inner join price b 
@@ -100,7 +100,7 @@ select * from price
 	
 	select  a.passenger_name,a.boarding_city,a.destination_city,Sum(b.price),b.bus_type FROM passenger a 
 	inner join price b 
-    on a.bus_type = b.bus_type  
+    	on a.bus_type = b.bus_type  
 	where a.passenger_name = 'pallavi' and a.boarding_city ='Panaji' and a.destination_city = 'bengaluru' 
 	Group by b.bus_type;
         
