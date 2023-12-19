@@ -9,26 +9,26 @@ select * from walmart_sales;
 # Rename the table name 
 	ALTER TABLE `walmartsalesdata.csv` RENAME TO  walmart_sales;
     
-# ------- find the day name ? ---- 
+#  ----------- find the day name ? -----------
 	select dayname(date)  from walmart_sales;
 
-#  ---------- Add column Day_name ---------
+#  ---------- Add column Day_name --------------
 	alter table walmart_sales add column Day_name varchar(20);
 
 # ------- update the column with day_name ----------
 	update walmart_sales set Day_name = dayname(date);
 
-# ------- find the name of the month ? ---------
+# ------- find the name of the month ? ------------
 	select monthname(date) from walmart_sales;
 
-# ------- Add month name column ---------
+# ------- Add month name column --------------
 	alter table walmart_sales 
 		add column month_name varchar(20);
         
 # ------ Update the month name in that column ---------
 	update walmart_sales set month_name = monthname(date);
 
-# ------- find the time of the day ? -------
+# ------- find the time of the day ? ---------------
 select time, (case when time between "00:00:00" and "12:00::00" then "Morning" 
 when time between "12:01:00" and "16:00:00" then "Afternoon" 
 else "Evening"  end ) as time_of_day from walmart_sales; 
